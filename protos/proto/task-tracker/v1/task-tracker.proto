@@ -1,0 +1,59 @@
+syntax = "proto3";
+
+package tasktracker;
+
+option go_package = "github.com/gasuhwbab/task-tracker/protos/gen/go/task-tracker;tasktrackerv1";
+
+service TaskTracker {
+    rpc CreateTask(CreateTaskRequest) returns (CreateTaskResponse);
+    rpc DeleteTask(DeleteTaskRequest) returns (DeleteTaskResponse);
+    rpc GetTasks(GetTasksRequest) returns (GetTasksResponse);
+    rpc UpdateTask(UpdateTaskRequest) returns (UpdateTaskResponse);
+}
+
+message Task {
+    uint32 task_id = 1;
+    uint32 progress = 2;
+    string name = 3;
+    string description = 4;
+}
+
+message GetTasksRequest {
+    uint32 user_id = 1;
+}
+
+message GetTasksResponse {
+    repeated Task tasks = 1;
+}
+
+message UpdateTaskRequest {
+    uint32 user_id = 1;
+    Task updated_task = 2;
+}
+
+message UpdateTaskResponse {
+    uint32 task_id = 1;
+}
+
+message CreateTaskRequest {
+    uint32 user_id = 1;
+    string name = 2;
+}
+
+message CreateTaskResponse {
+    uint32 task_id = 1;
+}
+
+message DeleteTaskRequest {
+    uint32 user_id = 1;
+    uint32 task_id = 2;
+}
+
+message DeleteTaskResponse {
+    uint32 task_id = 1;
+}
+
+
+
+
+
