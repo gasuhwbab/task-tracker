@@ -1,0 +1,5 @@
+env: "local"
+storage_path: "task-tracker/storage"
+grpc: 
+  port: 8000
+  timeout: 1h
