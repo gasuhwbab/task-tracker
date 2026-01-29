@@ -8,6 +8,7 @@ require (
 	github.com/BurntSushi/toml v1.2.1 // indirect
 	github.com/golang/protobuf v1.5.4 // indirect
 	github.com/joho/godotenv v1.5.1 // indirect
+	github.com/mattn/go-sqlite3 v1.14.33
 	golang.org/x/net v0.49.0 // indirect
 	golang.org/x/sys v0.40.0 // indirect
 	golang.org/x/text v0.33.0 // indirect
